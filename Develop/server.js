@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 
 const PORT = process.env.PORT || 3000;
 
-const db = require("./models/workouts");
+const db = require("./models");
 const apiRoutes = require("./routes/apiRoutes");
 
 const app = express();
@@ -20,6 +20,7 @@ app.use(express.static("public"));
 app.use(apiRoutes);
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true, useUnifiedTopology: true });
+
 
 mongoose.connection.on("error", (err) =>
   console.log(`error in mongoose connection: ${err.message}`)
