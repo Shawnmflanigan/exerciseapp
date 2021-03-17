@@ -16,7 +16,7 @@ const exerciseSchema = new Schema({
         type: String,
         trim: true,
         required: true,
-        validate: [({ length }) => length <= 50, "name is too long, ADIDAS!!!"],
+        validate: [({ length }) => length <= 50, "name is too long"],
     },
 
     type: {
@@ -44,11 +44,10 @@ const exerciseSchema = new Schema({
     },
     distance: {
         type: Number,
-        required: true,
     }
 });
 
 
-const exercises = mongoose.model('exercises', ChoresSchema);
+const Workout = mongoose.model('exercises', exerciseSchema);
 
-module.exports = exercises;
+module.exports = Workout;
