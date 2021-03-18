@@ -10,6 +10,7 @@ const exerciseSchema = new Schema({
         type: Date,
         trim: true,
         required: true,
+        default: Date.now,
     },
 
     exercises:  [{
