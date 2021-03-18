@@ -10,12 +10,15 @@ router.post("/api/workouts", async (req, res) => {
     try{
   const newWorkout = await Workout.create(req.body);
   res.status(201);
-//   res.send(`Workout with id: ${newWorkout.id} was created!`);
+ res.send(`Workout with id: ${newWorkout.id} was created!`);
     }catch(err) {
         res.status('403')
         res.send(`Failed with: ${err}`)
     }
-
 });
+
+// router.put("/api/workouts/:id", async (req, res => {
+//   res.send(`Workout with id: ${newWorkout.id} was created!`)
+// }));
 
 module.exports = router;
