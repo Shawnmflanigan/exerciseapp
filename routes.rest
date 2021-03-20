@@ -3,3 +3,7 @@ GET http://localhost:3000/api/workouts
 ###
 
 GET http://localhost:3000/exercises
+
+### 
+
+POST http://localhost:3000/api/workouts
